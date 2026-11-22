@@ -1,0 +1,9 @@
+{
+  "name": "unity-lab-forensics-capture",
+  "private": true,
+  "type": "module",
+  "description": "Local Playwright runtime for user-driven HAR capture",
+  "dependencies": {
+    "playwright-core": "1.65.1"
+  }
+}

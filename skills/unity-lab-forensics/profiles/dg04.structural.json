@@ -1,0 +1,40 @@
+{
+  "name": "dg04-structural",
+  "status": "structural-only (v0.1)",
+  "description": "DG04 结构级 profile：只记录已核实的事实，映射与语义部分留空待手填。演示'从本地产物开始'的工作流与停止点。",
+  "inputs": {
+    "wasm": "./local-inputs/circuit_experiment.wasm",
+    "metadata": "./local-inputs/global-metadata.dat",
+    "disassembly": null
+  },
+  "build_hashes": {
+    "wasm": "01a6ee59359551591a1855f5b0912a3bece9707484ced4a8f923f65014a4d129",
+    "metadata_source": "DG04/extracted/global-metadata.dat (from Unity .data archive)"
+  },
+  "registration": {
+    "code": null,
+    "metadata": null
+  },
+  "expected": {
+    "method_count": 23369,
+    "type_count": 3806,
+    "literal_count": 6391,
+    "pair_count": 51786,
+    "max_destination": 16977,
+    "table_size": 84905
+  },
+  "structural_facts": [
+    "metadata version 24; counts parsed with the generic parser (2026-11-18, read-only)",
+    "probe literals pointLineOne/startName/endName/errorName/wrong all present in DG04 metadata (same experiment family as DG10)",
+    "wasm type_count 676; no disassembly file available"
+  ],
+  "target_literals": {},
+  "methods": [],
+  "fields": {},
+  "rule_record": null,
+  "incomplete_inferences": [
+    "STRUCTURAL READ ONLY: no mapping, literal tracing, or semantic conclusion is claimed for DG04.",
+    "registration addresses not located; dispatch (base,mask) set unknown (no disassembly); helper func ids unmeasured; key format unknown.",
+    "Full cross-experiment validation is deferred to the next real case (v0.1 scope)."
+  ]
+}

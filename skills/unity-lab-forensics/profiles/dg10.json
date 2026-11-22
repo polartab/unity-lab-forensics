@@ -1,0 +1,156 @@
+{
+  "name": "dg10",
+  "description": "DG10 电路接线虚拟仿真实验（Unity WebGL IL2CPP v24.1）回归 profile",
+  "inputs": {
+    "wasm": "./local-inputs/lab.example.invalid_8088__experiment__DG10__Build__DG10.wasm.code.unityweb",
+    "metadata": "./local-inputs/global-metadata.dat",
+    "disassembly": "./local-inputs/dg10_code.dis"
+  },
+  "registration": {
+    "code": 1439108,
+    "metadata": 1439176
+  },
+  "expected": {
+    "method_count": 23374,
+    "type_count": 3806,
+    "literal_count": 6392,
+    "pair_count": 51797,
+    "max_destination": 16978,
+    "table_size": 84913
+  },
+  "target_literals": {
+    "pointLineOne": 2808452,
+    "pointLineTwo": 2808460,
+    "pointLineThree": 2808468,
+    "startName": 2808204,
+    "endName": 2808208,
+    "errorName": 2808528,
+    "JsonDataSHow": 2810228,
+    "wrong": 2812712,
+    "a": 2810448,
+    "b:": 2810512,
+    "#": 2796236,
+    "a6b:": 2810696
+  },
+  "methods": [
+    {
+      "type": "Manager",
+      "method": "bsChange",
+      "expected_func": 28129
+    },
+    {
+      "type": "Manager",
+      "method": "SetPartsJudage",
+      "expected_func": 28127
+    },
+    {
+      "type": "Manager",
+      "method": "InitConner",
+      "expected_func": 28196
+    },
+    {
+      "type": "Manager",
+      "method": "JudgeMentThreePointMethod",
+      "expected_func": 28198
+    },
+    {
+      "type": "Manager",
+      "method": "NewConnectJudage",
+      "expected_func": 28165
+    },
+    {
+      "type": "Manager",
+      "method": "NewConnectJudageTwo",
+      "expected_func": 28164
+    },
+    {
+      "type": "UIHandler",
+      "method": "MethodError",
+      "expected_func": 24289
+    },
+    {
+      "type": "UIHandler",
+      "method": "ErrorSureMethod",
+      "expected_func": 24288
+    },
+    {
+      "type": "UIHandler",
+      "method": "SaveLineMethod",
+      "expected_func": 24286
+    },
+    {
+      "type": "UIHandler",
+      "method": "JudageMentPost",
+      "expected_func": 24313
+    },
+    {
+      "type": "UIHandler",
+      "method": "ErrorMessage",
+      "expected_func": 24314
+    },
+    {
+      "type": "DataHandler",
+      "method": "InitData",
+      "expected_func": 25029
+    },
+    {
+      "type": "DataHandler",
+      "method": "SetOneList",
+      "expected_func": 25030
+    },
+    {
+      "type": "ElectricCenter",
+      "method": "Judgement",
+      "expected_func": 25095
+    },
+    {
+      "type": "ElectricCenter",
+      "method": "NewJudgement",
+      "expected_func": 25090
+    },
+    {
+      "type": "ScenesHandle",
+      "method": "ConnectLineTrue",
+      "expected_func": 25678
+    },
+    {
+      "type": "MadeSaveJson",
+      "method": "OtherMethod",
+      "expected_func": 28132
+    },
+    {
+      "type": "MadeSaveJson",
+      "method": "SaveDataFist",
+      "expected_func": 28131
+    }
+  ],
+  "fields": {
+    "connectNew": 340,
+    "errorTotle": 460,
+    "always_empty_456": 456,
+    "strError": 616
+  },
+  "rule_record": {
+    "config": "./local-inputs/wiring-config-dg10.json",
+    "list": "pointLineOne",
+    "index": 6,
+    "key_format": "a{index}b:",
+    "record_fields": {
+      "startName": "电源U1+",
+      "endName": "电阻R1",
+      "errorName": "电源5:电阻9"
+    },
+    "expected_key": "a6b:"
+  },
+  "incomplete_inferences": [
+    "TERMINAL RULE IS A PRECONDITIONED INFERENCE, NOT AN UNCONDITIONAL PROOF: an a{i}b: token never enters Manager.connectNew only IF (1) the enumerated writer set is complete (28217/28164/28165 resets; 28196 appends digits+colon; 28199/28201 append gated aXb: tokens or 'error:' through the &connectNew pointer parameter), AND (2) no indirect write path exists. Indirect writes NOT yet covered: connectNew's address passed to callees other than 28199/28201; block/memcpy-style writes into the Manager instance; deserialization or server-driven paths that populate Manager fields; any writer outside the scanned method range. The 28201 tail is verified by structural identity with 28199, not instruction-by-instruction. Five Manager methods (IsInputRight/BasicSetParam/BasicGetParam/TransistorGetParam/FourTransistorGetParam) remain unresolved to wasm bodies.",
+    "MethodError's missing-key branch (Contains('a'+i+'b:') false -> errorName appended via literal 2810740) is instruction-level disassembly evidence and stands independently of the reachability inference above.",
+    "The final scoring path is untraced: from the comparison result (connectList / MadeSaveJson.li) to the server request, and from the server response to the displayed final score.",
+    "The comparison result does not store into DataHandler.PCOne..PCFive; those lists are initialized from the pointLineN JSON by DataHandler.InitData -> SetOneList. The old result -> PC -> strError chain is retracted, not proven.",
+    "The writers of Manager.MyNewName/stepOne..stepEleven are not pinned; the branch is proven at the method level, not from the config loader.",
+    "An exhaustive audit of indirect generic List<T> mutations on DataHandler.PCOne..PCEleven is not complete; the traced terminal-rule path is Add-only, but whole-session immutability is not claimed.",
+    "DG10 applicability is established from the extracted DG10 answer config whose errorName values match the runtime wrong payload; the config loader path is not instruction-traced.",
+    "The decoded historical wrong payload (length 935, 49 non-empty parts, task counts 20/11/18) corroborates only that one session's error output. It is not evidence that the terminal rule holds for other sessions, other inputs, or other experiments.",
+    "Dynamic verification, request replay, and browser operations were not performed and need separate approval."
+  ]
+}
